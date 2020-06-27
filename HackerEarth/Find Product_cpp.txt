@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    const unsigned int M=1000000007;
+    int n,*ptr,i;
+    long product=1;
+    scanf("%d",&n);
+    ptr=(int *) malloc(n*sizeof(int));
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",ptr+i);
+        product=((product%M)*(*(ptr+i)))%M;
+    }
+    printf("%d",product);
+    
+}

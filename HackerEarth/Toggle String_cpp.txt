@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    char str[100];
+    int i;
+    scanf("%s",str);
+    for(i=0;i<strlen(str);i++)
+    {
+		if(str[i]>=97&&str[i]<=122)
+		{
+		//convert uppercase to lowercase
+			str[i] -= 32;
+		}
+		else
+		{
+		//convert lowercase to uppercase
+			str[i] += 32;
+		}
+    }
+    printf("%s",str);
+}

@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+    int t,i,j,k,c,l,f=0;
+    char a[100000],b[100000];
+    /*
+    *Accepting number of test cases
+    */
+    scanf("%d",&t);
+    //For loop for test cases
+    for(i=0;i<t;i++)
+    {
+        /*
+        *Accepting the two strings
+        */
+        scanf("%s",a);
+        scanf("%s",b);
+        /*
+        *comparing every character of first string with
+        *all the characters of second string
+        */
+        c=0;
+        for(j=0;j<strlen(a);j++)
+        {
+            f=0;
+            for(k=0;k<strlen(b);k++)
+            {
+                if(a[j]==b[k])
+                {
+                    /*
+                    *if character found then replace it with 0 set f to 1
+                    */
+                    f=1;
+                    b[k]='0';
+                    break;
+                }
+            }
+                /*
+                *if character is not found in second string means we have to remove it so increment count
+                */
+                if(f==0)
+                    ++c;
+        }
+            for(k=0;k<strlen(b);k++)
+            {
+                /*
+                *count nonzero elements in second string they must be deleted
+                *because they don't match with first string
+                */
+               if(b[k]!='0')
+                    ++c;
+
+            }
+
+              printf("%d\n",c);
+              a[0]='\0';
+              b[0]='\0';
+
+}
+return 0;
+}

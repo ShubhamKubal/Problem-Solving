@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int no;
+    /*
+    *while loop with always true condition
+    */
+    while(1)
+    {
+        scanf("%d",&no);
+        /*
+        *if no is 42 then program is terminated until then print those numbers
+        */
+        if(no==42)
+            return 0;
+        else
+            printf("%d\n",no);
+
+    }
+
+}

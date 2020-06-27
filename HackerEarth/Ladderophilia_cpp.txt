@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    /*
+    *calculating total number of rows from user input
+    */
+    n=n*3+2;
+
+    for(i=1;i<=n;i++)
+    {
+        /*
+        *for every multiple of 3 print 5 stars in one line
+        */
+        if(i%3==0)
+        {
+            for(j=1;j<=5;j++)
+                printf("*");
+
+        }
+        else
+        {
+            /*
+            *In other rows for 1&5 print * otherwise print " "
+            */
+            for(j=1;j<=5;j++)
+            {
+                if(j==1||j==5)
+                    printf("*");
+                else
+                    printf(" ");
+            }
+        }
+        printf("\n");
+
+    }
+    return 0;
+}

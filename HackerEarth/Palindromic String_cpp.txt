@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    char str[100];
+    char rev[100];
+    int i,l,flag=0;
+    scanf("%s",str);
+    //Finding Length of given string
+    l=strlen(str);
+    /*
+    * Checks first character with last character till we reached 
+    * mid if it is not same sets flag=1 else flag is 0
+    */
+    for(i=0;i<l/2;i++)
+    {
+        if(str[i]!=str[l-1-i])
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+        printf("YES");
+    else
+        printf("NO");
+        
+    return 0;
+        
+}

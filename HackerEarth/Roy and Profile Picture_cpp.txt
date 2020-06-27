@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int L,N,W,H;
+    int i;
+    scanf("%d",&L);
+    scanf("%d",&N);
+    for(i=1;i<=N;i++)
+    {
+        scanf("%d %d",&W,&H);
+		//checks if width and height is lower or higher if lower then  UPLOAD ANOTHER
+        if(W<L || H<L)
+            printf("UPLOAD ANOTHER\n");
+        else
+            if(W==H)
+			//if equal the ACCEPTED
+                printf("ACCEPTED\n");
+            else
+			//if it is higher then CROP IT 
+                printf("CROP IT\n");
+    
+    }
+    return 0;
+}

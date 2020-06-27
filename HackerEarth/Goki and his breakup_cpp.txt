@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int N,X,y,i;
+    /*
+    *accepting number of peoples who can be friends of Goki
+    */
+    scanf("%d",&N);
+    /*
+    *accepting minimum skills required
+    */
+    scanf("%d",&X);
+    /*
+    *iterating for loop for N number of peoples
+    */
+    for(i=0;i<N;i++)
+    {
+        scanf("%d",&y);
+        /*
+        *checking if persons skills are greater than required skills
+        */
+        if(y>=X)
+            printf("YES\n");
+        else
+            printf("NO\n");
+
+    }
+
+}

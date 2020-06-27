@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+	/*
+	*DECLARING NECESSARY VARIABLES
+	*/
+	int T,i,SH,SM,EH,EM;
+	int total, dh, dm;
+	/*ACCETING NUMBER OF TEST CASES
+	*/
+	scanf("%d", &T);
+	/*
+	*ITERATING FOR NUMBER OF TEST CASES
+	*/
+	for (i = 0; i < T; i++)
+	{
+		/*
+		*ACCEPTING INPUT FOR STARTING HOUR, MINUTES
+		*AND ENDING HOURS,MINUTES
+		*/
+		scanf("%d %d %d %d", &SH, &SM, &EH, &EM);
+		/*
+		*CONVERTING HOURS INTO MINUTES FOR FINDING THE DIFFERENCE INTO MINUTES
+		*/
+		total = EH * 60 + EM-SH * 60 - SM;
+		/*
+		*DIFFERENCE IS AGAIN CONVERTED FROM MINUTES
+		*TO HOURS AND MINUTES FROMAT 
+		*/
+		dh = total / 60;        //FOR HOURS
+		dm = total % 60;        //FOR MINUTES
+		/*
+		*DISPLAYING DURATION BETWEEN GIVEN TIME
+		*/
+		printf("%d %d\n", dh, dm);
+	}
+	return 0;
+}

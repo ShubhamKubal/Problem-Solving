@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    
+    
+    int T,i,j;
+    scanf("%d",&T);
+    for(i=0;i<T;i++)
+    {
+        char str1[100000],str2[100000];
+        scanf("%s",str1);
+        scanf("%s",str2);
+        int s1=0;
+        int s2=0;
+        if(strlen(str1)!=strlen(str2))
+            {
+                printf("NO\n");
+                continue;
+            }
+        else
+        {
+           for(j=0;str1[j]!='\0';j++)
+           {
+                s1=s1+str1[j];
+                s2=s2+str2[j];
+           }
+           if(s1==s2)
+            printf("YES\n");
+           else
+            printf("NO\n");
+        }
+        
+    }
+    
+    return 0;    
+}
