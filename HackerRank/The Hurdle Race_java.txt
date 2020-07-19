@@ -1,0 +1,11 @@
+// Complete the hurdleRace function below.
+    static int hurdleRace(int k, int[] height) {
+
+        Arrays.sort(height);
+        int len=height.length;
+        if (height[len-1]>k)
+            return height[len-1]-k;
+        else
+            return 0;
+
+    }

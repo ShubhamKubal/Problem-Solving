@@ -1,0 +1,11 @@
+// Complete the repeatedString function below.
+    static long repeatedString(String s, long n) {
+        int lengthOfString = s.length();
+        long countOfA = 0;
+        for(int i = 0; i < lengthOfString; i++) {
+            if(s.charAt(i) == 'a' && i+1 <= n) {
+                countOfA = countOfA + ((n - (i+1))/lengthOfString)+1;
+            }
+        }
+        return countOfA;
+    }

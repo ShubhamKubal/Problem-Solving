@@ -1,0 +1,28 @@
+// Complete the beautifulDays function below.
+    static int beautifulDays(int i, int j, int k) {
+
+
+        int count=0;
+        for(int p=i;p<=j;p++)
+        {
+            int reversed = 0;
+            int num=p;
+            while(num != 0) {
+                int digit = num % 10;
+                reversed = reversed * 10 + digit;
+                num /= 10;
+            }
+            int diff=0;
+            
+            if (p>reversed)
+                diff=p-reversed;
+            else
+                diff=reversed-p;
+            
+            if ((diff%k)==0)
+                count++;
+            
+        }
+
+        return count;
+    }

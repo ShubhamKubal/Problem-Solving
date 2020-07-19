@@ -1,0 +1,17 @@
+// Complete the compareTriplets function below.
+    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+
+        int arr[]=new int[2];
+        for (int i=0;i<a.size();i++)
+        {
+            if (a.get(i) > b.get(i))
+                arr[0] +=1;
+            else if (a.get(i) < b.get(i))
+                arr[1] +=1;
+        }
+        List<Integer> t_score=new ArrayList<Integer>();
+        t_score.add(arr[0]);
+        t_score.add(arr[1]);
+        return t_score;
+
+    }

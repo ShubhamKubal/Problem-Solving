@@ -1,0 +1,20 @@
+// Complete the chocolateFeast function below.
+    static int chocolateFeast(int n, int c, int m) {
+
+        int chocklates=n/c;
+        int count=countChocklates(n/c, m);
+        return count+chocklates;
+
+
+    }
+
+    static int countChocklates(int wrappers,int m)
+    {
+        if (wrappers<m)
+            return 0;
+        int chocklates=wrappers/m;
+        int count=countChocklates(wrappers/m+wrappers%m, m);
+        return chocklates+count;
+        
+        
+    }

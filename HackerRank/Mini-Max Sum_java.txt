@@ -1,0 +1,28 @@
+// Complete the miniMaxSum function below.
+    static void miniMaxSum(int[] arr) {
+
+        long minSum=arr[0];
+        long maxSum=arr[0];
+        long total=arr[0];
+        // Arrays.sort(arr);
+
+        // for (int i=0;i<5-1;i++)
+        //     minSum +=arr[i];
+        
+        // for (int i=1;i<5;i++)
+        //     maxSum +=arr[i];
+
+        for (int i=1;i<5;i++)
+        {
+            total = total+arr[i];
+
+            if (minSum > arr[i])
+                minSum=arr[i];
+            
+            if (maxSum<arr[i])
+                maxSum=arr[i];
+        }
+
+        System.out.println((total-maxSum)+" "+(total-minSum));
+
+    }

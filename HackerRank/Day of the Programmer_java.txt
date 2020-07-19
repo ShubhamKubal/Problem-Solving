@@ -1,0 +1,31 @@
+// Complete the dayOfProgrammer function below.
+    static String dayOfProgrammer(int year) {
+
+        int sum=31+31+30+31+30+31+31;
+        
+        if (year>1918)
+        {
+            if (year%400==0 || (year%4==0 && year%100!=0))
+                sum += 29;
+            else
+                sum += 28;
+        }
+        else if (year<1918)
+        {
+            if (year %4==0)
+                sum += 29;
+            else
+                sum += 28;
+        }
+        else
+        {
+            sum +=15;
+        }
+        
+        int diff=256-sum;
+        
+        if (diff<10)
+            return "0"+diff+".09."+year;
+        else
+            return diff+".09."+year;
+    }

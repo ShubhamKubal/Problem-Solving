@@ -1,0 +1,25 @@
+// Complete the birthday function below.
+    static int birthday(List<Integer> s, int d, int m) {
+
+        int count=0;
+        int len=s.size();
+        // int d=4;
+        // int m=2;
+        for (int i=0;i<len;i++)
+        {
+            int sum=0;
+            
+            for (int j=i,k=0;k<m && j<len;k++,j++)
+            {
+                sum += s.get(j);
+            }
+            
+            if (sum == d)
+                count++;
+        }
+
+
+        return count;
+
+
+    }

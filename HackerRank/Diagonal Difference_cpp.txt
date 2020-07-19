@@ -1,0 +1,22 @@
+int diagonalDifference(int arr_rows, int arr_columns, int** arr) {
+    
+    int i,j;
+    int rdg=0;
+    int ldg=0;
+    int diff=0;
+    for (i=0;i<arr_rows;i++)
+        rdg +=arr[i][i];
+    
+    for (i=0;i<arr_columns;i++)
+        ldg +=arr[i][arr_columns-1-i];
+
+    if (rdg<ldg)
+        diff=ldg-rdg;
+    else
+        diff=rdg-ldg;
+    
+    if(diff>=0)
+        return diff;
+    else
+        return -diff;
+}

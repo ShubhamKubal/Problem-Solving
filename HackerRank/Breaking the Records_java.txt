@@ -1,0 +1,24 @@
+// Complete the breakingRecords function below.
+    static int[] breakingRecords(int[] scores) {
+
+        int min=scores[0];
+        int max=scores[0];
+        int count[]= {0,0};
+        
+        int len=scores.length;
+        
+        for (int i=1;i<len;i++)
+        {
+            if (scores[i]>max)
+            {
+                max=scores[i];
+                count[0]++;
+            }
+            else if (scores[i]<min)
+            {
+                min=scores[i];
+                count[1]++;
+            }    
+        }
+        return count;
+    }

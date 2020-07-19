@@ -1,0 +1,84 @@
+class HashMapKey {
+    String str;
+    public String getStr() {
+        return str;
+    }
+    public void setStr(String str) {
+        this.str = str;
+    }
+    public HashMapKey(String str) {
+        super();
+        this.str = str;
+    }
+    @Override
+    public String toString() {
+        return str ;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        HashMapKey hkey = (HashMapKey) obj;
+        int[] first = new int[26];
+        int[] second = new int[26];
+        char[] one = str.toCharArray();
+        char[] two = hkey.getStr().toCharArray();
+        if (one.length != two.length) {
+            return false;
+        }
+        for (int i = 0; i < one.length; i++) {
+            first[one[i] - 'a']++;
+        }
+        for (int i = 0; i < two.length; i++) {
+            second[two[i] - 'a']++;
+        }
+        for (int i = 0; i < first.length; i++) {
+            if(first[i] != second[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    @Override
+    public int hashCode() {
+        int sum = 0;
+        char[] first = str.toCharArray();
+        for(int i = 0; i < first.length; i++) {
+            sum += first[i];
+        }
+        return sum;
+    }
+}
+
+public class Solution {
+
+    // Complete the sherlockAndAnagrams function below.
+    static int sherlockAndAnagrams(String s) {
+
+         Map<HashMapKey, Integer> m = new HashMap<HashMapKey, Integer>();
+        int anagramCount = 0;
+        s = s + " ";
+        // to find all substrings
+        for(int i = 0; i < s.length(); i++) {
+            for(int j = i+1; j < s.length(); j++) {
+                HashMapKey hk = new HashMapKey(s.substring(i, j));
+                if(m.get(hk) != null) {
+                    int count = m.get(hk);
+                    count++;
+                    m.put(hk, count);
+                }
+                else {
+                    m.put(hk,1);
+                }
+            }
+        }
+        for (Map.Entry<HashMapKey, Integer> entry : m.entrySet()) {
+            if(entry.getValue() > 1) {
+                for(int i = 1; i < entry.getValue(); i++) {
+                    anagramCount += i;
+                }
+            }
+        }
+        return anagramCount;
+
+
+
+    }

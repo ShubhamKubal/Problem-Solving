@@ -1,0 +1,53 @@
+// Complete the cutTheSticks function below.
+    static int[] cutTheSticks(int[] arr) {
+
+        int len=arr.length;
+        List<Integer> result=new ArrayList<Integer>();
+        while(len>0)
+        {
+            int count=0;
+            int min=min(arr,len);
+            
+            for (int i=0;i<len;i++)
+            {
+                arr[i]=arr[i]-min;
+                if (arr[i]==0)
+                {
+                    for (int j=i;j<len-1;j++)
+                    {
+                        arr[j]=arr[j+1];
+                    }
+                    len--;
+                    i--;
+                    count++;
+                }
+                else if (arr[i]>0)
+                    count++;
+            }
+            result.add(count);
+            
+        }
+        
+        int[] f=new int[result.size()];
+        for(int i=0;i<f.length;i++)
+        {
+            f[i]=result.get(i);
+        }
+
+        return f;
+
+
+    }
+
+    static int min(int[] arr,int len)
+    {
+        int min=arr[0];
+        
+        for (int i=1;i<len;i++)
+        {
+            if (arr[i]<min)
+                min=arr[i];
+        }
+        
+        return min;
+    }

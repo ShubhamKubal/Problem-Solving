@@ -1,0 +1,22 @@
+// Complete the catAndMouse function below.
+    static String catAndMouse(int x, int y, int z) {
+
+        int diffA=0,diffB=0;
+        if (x>z)
+            diffA=x-z;
+        else
+            diffA=z-x;
+        
+        if (y>z)
+            diffB=y-z;
+        else
+            diffB=z-y;
+        
+        if (diffA<diffB)
+            return "Cat A";
+        else if (diffB<diffA)
+            return "Cat B";
+        else
+            return "Mouse C";
+
+    }

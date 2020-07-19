@@ -1,0 +1,35 @@
+    /*
+     * Complete the timeConversion function below.
+     */
+    static String timeConversion(String s) {
+        /*
+         * Write your code here.
+         */
+
+         if(s.contains("PM"))
+         {
+             //int hr=Integer.parseInt(s.substring(0, 2))+12;
+             int hr=Integer.parseInt(s.substring(0, 2));
+             if(hr==12)
+                hr=12;
+            else
+                hr=hr+12;
+
+             return ""+hr+s.substring(2,8);
+         }
+         else 
+         {
+             int hr=Integer.parseInt(s.substring(0, 2));
+             if(hr==12)
+             {
+                hr=0;
+                return ""+hr+"0"+s.substring(2,8);   
+             }
+
+             if (hr<10)
+                return ""+"0"+hr+s.substring(2,8);
+            else
+                return ""+hr+s.substring(2,8); 
+         }
+
+    }

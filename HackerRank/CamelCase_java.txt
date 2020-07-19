@@ -1,0 +1,16 @@
+ // Complete the camelcase function below.
+    static int camelcase(String s) {
+
+        int len=s.length();
+        int sum=1;
+        
+        for(int i=0;i<len;i++)
+        {
+            if ((s.charAt(i)>='A') && (s.charAt(i)<='Z') )
+                sum += 1;
+        }
+
+        return sum;
+
+
+    }

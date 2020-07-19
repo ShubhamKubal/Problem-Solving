@@ -1,0 +1,27 @@
+// Complete the pangrams function below.
+    static String pangrams(String s) {
+
+        String s1=s.toLowerCase();
+        int len=s1.length();
+        Boolean[] arr=new Boolean[26];
+        
+        for (int i=0;i<len;i++)
+        {
+            if(s1.charAt(i)==' ')
+                continue;
+            arr[s1.charAt(i)-'a']=true;
+        }
+        
+        for (int i=0;i<arr.length;i++)
+        {
+            if (arr[i]==null)
+            {
+                return "not pangram";
+            }
+                
+        }
+        
+        return "pangram";
+
+
+    }

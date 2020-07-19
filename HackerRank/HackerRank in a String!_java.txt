@@ -1,0 +1,22 @@
+// Complete the hackerrankInString function below.
+    static String hackerrankInString(String s) {
+
+
+        String required="hackerrank";
+        
+        int index=0;
+        
+        for (int j=0;j<s.length() && index!=(required.length());j++)
+        {
+            if (s.charAt(j) == required.charAt(index))
+                index++;
+        }
+        
+        
+        if (index==(required.length()))
+            return "YES";
+        else
+            return "NO";
+
+
+    }

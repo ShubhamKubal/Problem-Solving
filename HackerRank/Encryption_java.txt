@@ -1,0 +1,75 @@
+ // Complete the encryption function below.
+    static String encryption(String s) {
+
+                StringBuilder str=new StringBuilder(s);
+        StringBuilder result=new StringBuilder();
+
+        for (int i=0;i<str.length();i++)
+        {
+            if (str.charAt(i)==' ')
+            {
+                str.replace(i, i+1, "");
+            }
+        }
+        int L=str.length();
+        int l=(int)Math.floor(Math.sqrt(L));
+        int u=(int)Math.ceil(Math.sqrt(L));
+        
+        int c=0;
+        while((l*u)<L)
+        {
+            if ((c%2)==0)
+            {
+                l++;
+                c++;
+            }
+            else
+            {
+                u++;
+                c++;
+            }
+        }
+        
+        
+        if (perfectSqr(l, u))
+        {
+            for (int i=0;i<l && i<L;i++)
+            {
+                for (int j=i;j<L;j=j+u)
+                {
+                    result.append(str.charAt(j));
+                    
+                }
+                result.append(' ');
+                
+            }
+        }
+        else
+        {
+            for (int i=0;i<=l && i<L;i++)
+            {
+                for (int j=i;j<L;j=j+u)
+                {
+                    result.append(str.charAt(j));
+                    
+                }
+                result.append(' ');
+                
+            }
+        }
+        return result.toString();
+
+
+    }
+
+    public static boolean perfectSqr(int l,int u)
+    {
+        int r=l*u;
+        int f=(int)Math.floor(Math.sqrt(r));
+        int c=(int)Math.ceil(Math.sqrt(r));
+        
+        if (f==c)
+            return true;
+        else
+            return false;
+    }

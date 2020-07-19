@@ -1,0 +1,22 @@
+// Complete the bonAppetit function below.
+    static void bonAppetit(List<Integer> bill, int k, int b) {
+
+        int len=bill.size();
+        int sum=0;
+        
+        for (int i=0;i<len;i++)
+        {
+            if (i==k)
+                continue;
+            else
+            {
+                sum += bill.get(i);
+            }
+        }
+        
+        if (b==sum/2)
+            System.out.println("Bon Appetit");
+        else
+            System.out.println(b-sum/2);
+
+    }

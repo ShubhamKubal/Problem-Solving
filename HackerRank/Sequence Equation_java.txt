@@ -1,0 +1,30 @@
+// Complete the permutationEquation function below.
+    static int[] permutationEquation(int[] p) {
+
+        int len=p.length;
+        int[] x=new int[len];
+        System.out.println(len);
+        for(int i=1;i<=len;i++)
+        {
+            int index=-1;
+            
+            for (int j=0;j<len;j++)
+            {
+                if (p[j]==i)
+                {
+                    index=j+1;
+                }
+            }
+            for (int k=0;k<len;k++)
+            {
+                if (p[k]==index)
+                {
+                    x[i-1]=k+1;
+                }
+            }
+        }
+
+        return x;
+
+
+    }

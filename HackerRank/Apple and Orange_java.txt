@@ -1,0 +1,24 @@
+// Complete the countApplesAndOranges function below.
+    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+
+        int apc=0,orc=0;
+        
+        for (int i=0;i<apples.length;i++)
+        {
+            int d=a+apples[i];
+            
+            if (d>=s && d<=t)
+                apc++;
+        }
+        
+        for (int i=0;i<oranges.length;i++)
+        {
+            int d=b+oranges[i];
+            
+            if (d>=s && d<=t)
+                orc++;
+        }
+        System.out.println(apc);
+        System.out.println(orc);
+
+    }
